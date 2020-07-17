@@ -1,0 +1,13 @@
+<script src="{{URL::asset('tempres/js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/jquery-migrate-3.0.1.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/jquery-ui.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/popper.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/bootstrap.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/owl.carousel.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/mediaelement-and-player.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/jquery.stellar.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/jquery.countdown.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/bootstrap-datepicker.min.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/aos.js')}}"></script>
+  <script src="{{URL::asset('tempres/js/main.js')}}"></script>
