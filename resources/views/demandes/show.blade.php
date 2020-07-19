@@ -1,28 +1,55 @@
 @extends('mainlayout')
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Détail demande</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('demandes.index') }}"> retour</a>
-            </div>
+<br>
+<div class="row">
+    <div class="col-lg-12 margin-tb" style="text-align: center;">
+        <div class="col-12" style="text-align: center;">
+            <h4>Détails de la demande</h4>
+        </div>
+        <div class="pull-right">
+            <a class="btn btn-primary" style="position: relative;top: -33px;left: -23px;" href="{{ route('demandes.index') }}">
+                <i class="fa fa-fast-backward" aria-hidden="true"></i> Retour</a>
         </div>
     </div>
-   
+</div>
+
+<div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+
+        <div class="col-md-6 offset-md-3">
+
+
+
             <div class="form-group">
-                <strong>prix:</strong>
+                <strong>Type de Logement:</strong>
+                {{ $demande->type}}
+            </div>
+
+
+            <div class="form-group">
+                <strong>Budget maximal(Dhs) : </strong>
                 {{ $demande->prixmax }}
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+
             <div class="form-group">
-                <strong>type</strong>
-                {{ $demande->type }}
+                <strong>Description :</strong>
+                {{ $demande->description }}
+            </div>
+
+            <div class="form-group">
+                <strong>Date de la demande :</strong>
+                {{ $demande->dateOffre }}
             </div>
         </div>
+
+
     </div>
+
+
+
+
+</div>
+<br>
+
+
 @endsection

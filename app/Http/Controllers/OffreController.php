@@ -20,6 +20,32 @@ class OffreController extends Controller
      */
 
 
+
+
+    public function filter(Request $request)
+    {
+
+        $type = $request->get('type');
+        $prix = $request->get('prix');
+        $sup = $request->get('sup');
+        $cap = $request->get('cap');
+
+        $offres = DB::table('offres')->where([
+            ['type', '=', $type],
+            ['prix', '=', $prix],
+            ['superficie', '=', $sup],
+            ['capacite', '=', $cap],
+        ])->get();
+
+            //dd($offres);
+        return view('offres.listefilter',compact('offres'));
+
+      
+    }
+
+
+
+
     public function listeoffres()
     {
 
@@ -38,18 +64,13 @@ class OffreController extends Controller
         return view('offres.detailoffre', compact('offre'));
     }
 
-    public function offresmaps(){
-
+    public function offresmaps()
+    {
         $offres = Offre::all();
-
         JavaScript::put([
-
             'offres' =>  $offres,
-
         ]);
-
         return view('offres.offremaps');
-
     }
 
 
@@ -77,9 +98,9 @@ class OffreController extends Controller
 
         //JavaScript::put([
 
-          //  'user' =>  $offres,
+        //  'user' =>  $offres,
 
-       // ]);
+        // ]);
 
         return view('offres.create');
     }

@@ -11,6 +11,8 @@
 @include('partials.nav')
 @include('partials.barcoloc')
 
+@yield('filter_option')
+
 @yield('contentdetails')
 
 @yield('pres')

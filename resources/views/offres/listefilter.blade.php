@@ -35,25 +35,12 @@
             </SELECT>
             
         </div>
-
         <div class="col">
             <input type="submit"  style="position: relative;top:33px" class="btn btn-primary btn-block form-control-same-height rounded-0" value="Chercher">
           </div>
-
               </div>
-
-
-
               </div>
-
-
-           
-
-      
-          
         </form>
-
-     
       </div>
     </div>
 @endsection
@@ -63,7 +50,7 @@
         <div class="row mb-5">
           <div class="col-12">
             <div class="site-section-title">
-              <h3>Les Offres de Co-Locations disponibles :</h3>
+     <h4>Résultat de la Recherche : <span class="badge badge-pill badge-warning">{{$offres->count()}}</span></h4>
               <a class="btn btn-success pull-right" href="{{ route('maps') }}">
               <i class="fa fa-map-marker" aria-hidden="true"></i>
                 Maps
@@ -72,9 +59,18 @@
           </div>
         </div>
         <div class="row mb-5">
-      
 
-          @foreach($listeoffres as $offre)
+        @if($offres->isEmpty())
+
+        <div class="row">
+      <div class="col-12">
+        <p style="color:red;position:relative;left:380px">Votre Recherche ne correspond à aucune Offre !!</p>
+      </div>
+    </div>
+
+    @else
+
+          @foreach($offres as $offre)
           <div class="col-md-6 col-lg-4 mb-4">
             <a href="{{route('details',$offre->id)}}" class="prop-entry d-block">
               <figure>
@@ -112,9 +108,7 @@
             </a>
           </div>
         @endforeach
-
-
-
+        @endif
         </div>
         <div class="row">
           <div class="col-md-12 text-center">

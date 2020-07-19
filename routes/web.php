@@ -20,7 +20,8 @@ Route::get('/', function () {
 Route::resource('offres','OffreController')->middleware('auth');
 Route::resource('demandes','DemandeController')->middleware('auth');
 
-
+//filter result
+Route::post('/filter','OffreController@filter')->name('filter');
 
 Route::get('/listoffres','OffreController@listeoffres')->name('listoffres');
 Route::get('/listdemandes','DemandeController@listdemandes')->name('listdemande');
